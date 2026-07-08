@@ -1,5 +1,8 @@
 package com.gabriel.dsa_studies.Execices.ctcichapter01;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Q04_PalindromePermutation {
 
     public Boolean palindromePermutationWithHashmap (String word){
