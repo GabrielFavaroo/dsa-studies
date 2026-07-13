@@ -6,17 +6,31 @@ import java.util.Map;
 
 public class Q02_CheckPermutation {
 
-    // SOCORRAMMESUBINOONIBUSEMMARROCOS   SOCORRAMMEONIBUSEMMARROCOSSUBINO
+    //
 
     public boolean checkPermutationSorting(String firstWord, String secondWord){
-        if(firstWord.isEmpty() || secondWord.isEmpty())return false;
-        if(firstWord.length() != secondWord.length())return false;
+        if(firstWord.isEmpty() || secondWord.isEmpty()) {
+            return false;
+        }
+        if(firstWord.length() != secondWord.length()) {
+            return false;
+        }
 
-        Arrays.sort(firstWord.toCharArray());
-        Arrays.sort(secondWord.toCharArray());
+        char[] firstWordChars= firstWord.toCharArray();
+        char[] secondWordChars = secondWord.toCharArray();
 
-        for(int i = 0; i < firstWord.length(); i++){
-            if(firstWord.charAt(i) != secondWord.charAt(i))return false;
+
+        Arrays.sort(firstWordChars);
+        Arrays.sort(secondWordChars);
+
+        var firstWordSorted = new String(firstWordChars);
+        var secondWordSorted = new String (secondWordChars);
+
+        for(int i = 0; i < firstWordSorted.length(); i++){
+
+            if(firstWordSorted.charAt(i) != secondWordSorted.charAt(i)) {
+                return false;
+            }
         }
         return true;
     }
@@ -44,7 +58,7 @@ public class Q02_CheckPermutation {
         for (Map.Entry<Character, Integer> registry : firstWordRegistry.entrySet()){
             var key = registry.getKey();
 
-            if(!(secondWordRegistry.containsKey(key)) && !(secondWordRegistry.getOrDefault(key, 0) == firstWordRegistry.getOrDefault(key, 0)))return false;
+            if(!(secondWordRegistry.containsKey(key)) || !(secondWordRegistry.getOrDefault(key, 0) == firstWordRegistry.getOrDefault(key, 0)))return false;
 
 
         }
