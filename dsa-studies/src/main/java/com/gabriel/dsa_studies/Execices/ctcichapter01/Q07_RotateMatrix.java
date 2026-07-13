@@ -1,5 +1,7 @@
 package com.gabriel.dsa_studies.Execices.ctcichapter01;
 
+import java.util.Arrays;
+
 public class Q07_RotateMatrix {
 
     public byte[][] rotateMatrix (byte[][] matrix){
