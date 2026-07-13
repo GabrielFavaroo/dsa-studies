@@ -8,6 +8,9 @@ public class Q01_IsUnique {
 
     public Boolean isUniqueBruteForce(String word){
 
+        if(word.length() <= 1) return true;
+
+
         for(int i = 0; i < word.length() - 1; i++){
             for(int j = i + 1; j < word.length(); j++){
                 if(word.charAt(i) == word.charAt(j))return false;
@@ -19,9 +22,15 @@ public class Q01_IsUnique {
 
     public Boolean isUniqueSorting(String word){
 
-        Arrays.sort(word.toCharArray());
-        for(int i = 0; i < word.length() - 1;i++){
-            if(word.charAt(i) == word.charAt(i + 1))return false;
+        if(word.length() <= 1) return true;
+
+
+        char[] chars = word.toCharArray();
+        Arrays.sort(chars);
+        var sortedWord = new String(chars);
+
+        for(int i = 0; i < sortedWord.length() - 1;i++){
+            if(sortedWord.charAt(i) == sortedWord.charAt(i + 1))return false;
 
         }
 
@@ -29,6 +38,9 @@ public class Q01_IsUnique {
     }
 
     public Boolean isUniqueWithHashmap(String word){
+
+        if(word.length() <= 1) return true;
+
         HashMap<Character,Integer> registry = new HashMap<>();
 
         for (char character : word.toCharArray()){
