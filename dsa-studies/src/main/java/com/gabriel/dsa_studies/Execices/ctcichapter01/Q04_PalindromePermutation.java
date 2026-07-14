@@ -20,7 +20,7 @@ public class Q04_PalindromePermutation {
 
         }
 
-        switch (word.length()){
+        switch (word.length()%2){
 
             case 0: for (Map.Entry<Character, Integer> map : occurrences.entrySet()) {
                 if(map.getValue() % 2 != 0){return false;}
