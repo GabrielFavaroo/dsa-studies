@@ -19,7 +19,7 @@ public class Q03_URLify {
 
         int lastIndex = nullSpaces * 2 + trueSize;
 
-        for(int i = trueSize; i >= 0; i--){
+        for(int i = trueSize - 1; i >= 0; i--){
             if(array[i] != ' '){
                 array[lastIndex - 1] = array[i];
                 lastIndex--;
@@ -33,7 +33,7 @@ public class Q03_URLify {
         }
 
 
-        return Arrays.toString(array);
+        return new String(array);
     }
 
 }
