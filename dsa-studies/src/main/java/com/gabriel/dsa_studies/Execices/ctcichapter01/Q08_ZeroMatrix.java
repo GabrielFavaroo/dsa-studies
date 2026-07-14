@@ -15,11 +15,11 @@ public class Q08_ZeroMatrix {
 
         for(int i = 0; i < rows; i++){
             for(int j = 0; j < columns;j++){
-                if(matrix[i][j] == 0);
+                if(matrix[i][j] == 0) {
 
-                rowsWithZeros.add(i);
-                columnsWithZeros.add(j);
-
+                    rowsWithZeros.add(i);
+                    columnsWithZeros.add(j);
+                }
 
             }
 
@@ -40,6 +40,7 @@ public class Q08_ZeroMatrix {
             }
 
         }
+
 
 
 
